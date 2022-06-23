@@ -15,9 +15,11 @@
   font-size: 20px;
   text-transform: uppercase;
   color: #0055FB;
+  font-family: 'Merriweather', serif;
 }
 
 .add-form__input {
+  font-family: 'Roboto', sans-serif;
   min-width: 370px;
   line-height: 40px;
   box-sizing: border-box;
@@ -36,6 +38,7 @@
 }
 
 .add-button {
+  font-family: 'Merriweather', serif;
   width: 140px;
   height: 40px;
   box-sizing: border-box;
@@ -67,6 +70,7 @@
 }
 
 .add-heading {
+  font-family: 'Merriweather', serif;
   margin: 0 0 20px;
   padding: 20px;
   text-align: center;
@@ -101,6 +105,7 @@
 }
 
 .add-item__input {
+  font-family: 'Roboto', sans-serif;
   line-height: 40px;
   box-sizing: border-box;
   height: 40px;
@@ -111,6 +116,7 @@
 }
 
 .add-item__button {
+  font-family: 'Merriweather', serif;
   width: 140px;
   height: 40px;
   box-sizing: border-box;
