@@ -1,10 +1,10 @@
 .App {
   margin: 0 auto;
   padding: 50px;
-  max-width: 1000px;
+  max-width: 1200px;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-gap: 100px;
+  grid-gap: 80px;
   justify-content: start;
   align-items: start;
 }
