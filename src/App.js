@@ -11,7 +11,7 @@ const App = () => {
   const [books, setBooks] = useLocalStorage("books", [])
 
   const addBook = () => {
-    if (name.trim() && author.trim()) {
+    if (name.length && author.length) {
       const lastItem = books[books.length - 1];
       const bookID = lastItem === undefined ? 1 : lastItem.id + 1;
 
@@ -25,7 +25,11 @@ const App = () => {
       setName('');
       setAuthor('');
     }
+
+    if (!name.length || !author.length) {
+      alert('Hе все обязательные поля заполнены');
   }
+}
 
   const onKeyPressAdd = (evt) => {
     if (evt.key === 'Enter' || evt.key === 13) {
