@@ -6,13 +6,15 @@
   padding: 10px;
   border: 2px dashed #0055FB;
   border-radius: 10px;
+  box-sizing: border-box;
   justify-items: center;
+  min-width: 300px;
 }
 
 .add-form__heading {
   margin: 20px 0 0;
   text-align: center;
-  font-size: 20px;
+  font-size: 16px;
   text-transform: uppercase;
   color: #0055FB;
   font-family: 'Merriweather', serif;
@@ -20,7 +22,7 @@
 
 .add-form__input {
   font-family: 'Roboto', sans-serif;
-  min-width: 370px;
+  min-width: 250px;
   line-height: 40px;
   box-sizing: border-box;
   height: 40px;
@@ -37,7 +39,7 @@
   border: 2px solid #45A5FF;
 }
 
-.add-button {
+.add-form__button {
   font-family: 'Merriweather', serif;
   width: 140px;
   height: 40px;
@@ -45,7 +47,7 @@
   color: #FFFFFF;
   background: linear-gradient(180deg, #45A6FF 0%, #0055FB 100%), #C4C4C4;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 30px;
   text-align: center;
   border: none;
@@ -53,80 +55,50 @@
   margin: 10px 0;
 }
 
-.add-button:hover {
+.add-form__button :hover {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(180deg, #45A6FF 0%, #0055FB 100%), #C4C4C4;
 }
 
-.add-button:active {
+.add-form__button:active {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), linear-gradient(180deg, #45A6FF 0%, #0055FB 100%), #C4C4C4;
 }
 
-.add-button:disabled {
+.add-form__button:disabled {
   background: linear-gradient(0deg, #C4C4C4, #C4C4C4), linear-gradient(180deg, #45A6FF 0%, #0055FB 100%);
 }
 
-.add-container {
-  width: 700px;
+@media (min-width: 768px) {
+  .add-form {
+    min-width: 600px;
+  }
+
+  .add-form__heading {
+    font-size: 18px;
+  }
+
+  .add-form__input {
+    min-width: 400px;
+  }
+
+  .add-form__button {
+    font-size: 16px;
+  }
 }
 
-.add-heading {
-  font-family: 'Merriweather', serif;
-  margin: 0 0 20px;
-  padding: 20px;
-  text-align: center;
-  font-size: 20px;
-  text-transform: uppercase;
-  color: #f50c71;
-  border: 2px dashed #f50c71;
-  border-radius: 10px;
-}
+@media (min-width: 1200px) {
+  .add-form {
+    min-width: 400px;
+  }
 
-.add-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+  .add-form__heading {
+    font-size: 20px;
+  }
 
-.add-item {
-  max-width: 700px;
-  box-sizing: border-box;
-  height: 60px;
-  padding: 10px;
-  margin: 0 0 10px;
-  padding: 10px;
-  cursor: pointer;
-  outline: none;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  align-items: center;
-  justify-content: start;
-  border-bottom: 2px dashed #f50c71;
-}
+  .add-form__input {
+    min-width: 350px;
+  }
 
-.add-item__input {
-  font-family: 'Roboto', sans-serif;
-  line-height: 40px;
-  box-sizing: border-box;
-  height: 40px;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  font-size: 18px;
-}
-
-.add-item__button {
-  font-family: 'Merriweather', serif;
-  width: 140px;
-  height: 40px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  background: linear-gradient(180deg, #e16ea8 0%, #f50c71 100%), #C4C4C4;
-  border-radius: 5px;
-  font-size: 18px;
-  line-height: 20px;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-  margin: 0;
+  .add-form__button {
+    font-size: 18px;
+  }
 }

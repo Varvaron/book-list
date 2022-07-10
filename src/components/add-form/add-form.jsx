@@ -22,7 +22,7 @@ const AddForm = ({name, author, setName, setAuthor, onKeyPressAdd, addBook}) => 
       />
       <button 
         type='button' 
-        className='add-button'
+        className='add-form__button'
         onClick={addBook}
       >
         Добавить
