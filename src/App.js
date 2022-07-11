@@ -12,11 +12,8 @@ const App = () => {
 
   const addBook = () => {
     if (name.length && author.length) {
-      const lastItem = books[books.length - 1];
-      const bookID = lastItem === undefined ? 1 : lastItem.id + 1;
-
       const newBook = {
-        id: bookID,
+        id: Date.now(),
         name: name,
         author: author
       }
