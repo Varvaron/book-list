@@ -1,18 +1,19 @@
 .add-form {
   display: grid;
   justify-content: center;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   margin: 0 auto;
   padding: 10px;
   border: 2px dashed #0055FB;
   border-radius: 10px;
   box-sizing: border-box;
   justify-items: center;
+  align-items: center;
   min-width: 300px;
 }
 
 .add-form__heading {
-  margin: 20px 0 0;
+  margin: 0;
   text-align: center;
   font-size: 16px;
   text-transform: uppercase;
@@ -37,6 +38,38 @@
 .add-form__input:focus {
   opacity: 0.5;
   border: 2px solid #45A5FF;
+}
+
+.add-form__input-wrapper {
+  width: 250px;
+  height: 40px;
+  display: flex;
+  border: 2px dashed #45A6FF;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.add-form__file {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.add-form__label {
+  min-width: 240px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  color: #0055FB;
+}
+
+.add-form__lavel-text {
+  border: 2px dashed #45A6FF;
+  text-align: center;
 }
 
 .add-form__button {

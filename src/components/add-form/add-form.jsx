@@ -1,6 +1,6 @@
 import './add-form.css';
 
-const AddForm = ({name, author, setName, setAuthor, onKeyPressAdd, addBook}) => {
+const AddForm = ({name, author, setName, setAuthor, onKeyPressAdd, addBook, addCover}) => {
   return (
     <form className='add-form'>
       <h2 className='add-form__heading'>Добавить книгу в список</h2>
@@ -20,6 +20,27 @@ const AddForm = ({name, author, setName, setAuthor, onKeyPressAdd, addBook}) => 
         onChange={(evt) => setAuthor(evt.target.value)}
         onKeyDown={(evt) => onKeyPressAdd(evt)}
       />
+      <div 
+      className='add-form__input-wrapper'>
+        <input 
+          type='file'
+          name='book-cover'
+          id='book-cover'
+          accept='image/png, image/jpeg, image/jpg'
+          className='add-form__file'
+          onChange={(evt) => addCover(evt)}
+        />
+        <label 
+          htmlFor="book-cover"
+          className='add-form__label'
+        >
+          <span
+          className='add-form__label-text'
+          >
+            Выберите обложку (145х205)
+          </span>
+        </label>
+      </div>
       <button 
         type='button' 
         className='add-form__button'

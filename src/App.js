@@ -8,19 +8,35 @@ import './App.css';
 const App = () => {
   const [name, setName] = useLocalStorage('name', '');
   const [author, setAuthor] = useLocalStorage('author', '');
-  const [books, setBooks] = useLocalStorage("books", [])
+  const [cover, setCover] = useLocalStorage('cover', '')
+  const [books, setBooks] = useLocalStorage('books', [])
 
-  const addBook = () => {
+  const addCover =() => {
+    const file = document.querySelector('input[type=file]').files[0];
+    const reader  = new FileReader();
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  
+    reader.onloadend = () => {
+      setCover(reader.result);
+    }
+  }
+
+  const addBook = () => { 
     if (name.length && author.length) {
       const newBook = {
         id: Date.now(),
         name: name,
-        author: author
+        author: author,
+        cover: cover
       }
 
       setBooks((books) => [...books, newBook]);
       setName('');
       setAuthor('');
+      setCover('');
     }
 
     if (!name.length || !author.length) {
@@ -52,8 +68,8 @@ const App = () => {
 
   return (
     <div className='App'>
-      <AddForm name={name} author={author} setName={setName} setAuthor={setAuthor} onKeyPressAdd={onKeyPressAdd} addBook={addBook}/>
-      <BookList books={books} editBook={editBook} deleteBook={deleteBook}/>
+      <AddForm name={name} author={author} cover={cover} setName={setName} setAuthor={setAuthor} onKeyPressAdd={onKeyPressAdd} addBook={addBook} addCover={addCover} setCover={setCover}/>
+      <BookList books={books} editBook={editBook} deleteBook={deleteBook} addCover={addCover}/>
     </div>
   );
 }

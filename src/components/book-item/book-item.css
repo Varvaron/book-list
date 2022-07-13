@@ -1,14 +1,32 @@
 .book-item {
   box-sizing: border-box;
-  padding: 10px;
   margin: 0 0 10px;
   cursor: pointer;
+  padding: 0 0 10px;
   outline: none;
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
   align-items: center;
   justify-content: center;
   border-bottom: 2px dashed #f50c71;
+}
+
+.book-item__image {
+  display: block;
+  box-sizing: border-box;
+  width: 145px;
+  height: 205px;
+  justify-self: center;
+}
+
+.book-item__image--text {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  border: 2px dashed #f50c71;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
 }
 
 .book-item__input {
@@ -21,6 +39,7 @@
   outline: none;
   font-size: 18px;
   text-align: center;
+  min-width: 280px;
 }
 
 .book-item__button {
@@ -42,12 +61,26 @@
 
 @media (min-width: 768px) {
   .book-item {
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    height: 60px;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: start;
+    gap: 0 20px;
+    height: 250px;
+  }
+
+  .book-item__image {
+    grid-row: 1 / -1;
+  }
+
+  .book-item__input {
+    align-self: end;
+    justify-self: center;
+    min-width: 400px;
   }
 
   .book-item__button {
     font-size: 16px;
+    grid-row: 3 / -1;
+
   }
 }

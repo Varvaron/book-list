@@ -1,10 +1,19 @@
 import './book-item.css';
 
-const BookItem = ({id, name, editBook, author, deleteBook}) => {
+const BookItem = ({id, name, author, cover, editBook, deleteBook}) => {
+
+  const image =  cover ? 
+    <img src={cover} alt='Обложка для книги' className='book-item__image'/> 
+    :
+    <div className='book-item__image book-item__image--text'>
+      <p>Обложка не загружена</p>
+    </div>;
+
   return (
     <li
       className='book-item'
     >
+      {image}
       <input 
         type='text'
         className='book-item__input'
