@@ -41,12 +41,11 @@
 }
 
 .add-form__input-wrapper {
-  width: 250px;
+  min-width: 250px;
   height: 40px;
   display: flex;
-  border: 2px dashed #45A6FF;
-  border-radius: 5px;
   box-sizing: border-box;
+  padding: 0;
 }
 
 .add-form__file {
@@ -58,17 +57,23 @@
 }
 
 .add-form__label {
-  min-width: 240px;
+  min-width: 250px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Roboto', sans-serif;
   color: #0055FB;
+  border: 2px dashed #45A6FF;
+  border-radius: 5px;
+}
+
+.add-form__file:focus + .add-form__label {
+  border: 2px solid #45A6FF;  
+  opacity: 0.5;
 }
 
 .add-form__lavel-text {
-  border: 2px dashed #45A6FF;
   text-align: center;
 }
 
@@ -88,7 +93,7 @@
   margin: 10px 0;
 }
 
-.add-form__button :hover {
+.add-form__button:hover {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(180deg, #45A6FF 0%, #0055FB 100%), #C4C4C4;
 }
 
