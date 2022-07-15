@@ -3,7 +3,7 @@ import './book-item.css';
 const BookItem = ({id, name, author, cover, editBook, deleteBook}) => {
 
   const image =  cover ? 
-    <img src={cover} alt='Обложка для книги' className='book-item__image'/> 
+    <img width='145' height='205' src={cover} alt='Обложка для книги' className='book-item__image'/> 
     :
     <div className='book-item__image book-item__image--text'>
       <p>Обложка не загружена</p>
