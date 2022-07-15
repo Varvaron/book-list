@@ -1,6 +1,9 @@
 import './add-form.css';
 
-const AddForm = ({name, author, setName, setAuthor, onKeyPressAdd, addBook, addCover}) => {
+const AddForm = ({name, author, cover, setName, setAuthor, onKeyPressAdd, addBook, addCover}) => {
+
+  const uploadInputText = cover ? 'Обложка загружена' : 'Выберите обложку (145х205)';
+
   return (
     <form className='add-form'>
       <h2 className='add-form__heading'>Добавить книгу в список</h2>
@@ -37,7 +40,7 @@ const AddForm = ({name, author, setName, setAuthor, onKeyPressAdd, addBook, addC
           <span
           className='add-form__label-text'
           >
-            Выберите обложку (145х205)
+            {uploadInputText}
           </span>
         </label>
       </div>
