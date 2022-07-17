@@ -25,7 +25,7 @@ const App = () => {
   }
 
   const addBook = () => { 
-    if (name.length && author.length) {
+    if (name.length && author.length && !(/^\s*$/.test(name)) && !(/^\s*$/.test(author))) {
       const newBook = {
         id: Date.now(),
         name: name,
@@ -41,7 +41,13 @@ const App = () => {
 
     if (!name.length || !author.length) {
       alert('Hе все обязательные поля заполнены');
-  }
+    }
+
+    if (/^\s*$/.test(name) && /^\s*$/.test(author)) {
+      alert('Значения полей не могут состоять из одних пробелов');
+      setName('');
+      setAuthor('');
+    }
 }
 
   const onKeyPressAdd = (evt) => {
@@ -68,8 +74,9 @@ const App = () => {
 
   return (
     <div className='App'>
-      <AddForm name={name} author={author} cover={cover} setName={setName} setAuthor={setAuthor} onKeyPressAdd={onKeyPressAdd} addBook={addBook} addCover={addCover} setCover={setCover}/>
-      <BookList books={books} editBook={editBook} deleteBook={deleteBook} addCover={addCover}/>
+      <AddForm name={name} author={author} cover={cover} setName={setName} setAuthor={setAuthor} 
+        onKeyPressAdd={onKeyPressAdd} addBook={addBook} addCover={addCover} setCover={setCover}/>
+      <BookList books={books} editBook={editBook} deleteBook={deleteBook}/>
     </div>
   );
 }

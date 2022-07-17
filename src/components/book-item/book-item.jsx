@@ -7,7 +7,7 @@ const BookItem = ({id, name, author, cover, editBook, deleteBook}) => {
     :
     <div className='book-item__image book-item__image--text'>
       <p>Обложка не загружена</p>
-    </div>;
+    </div>
 
   return (
     <li
